@@ -6,3 +6,5 @@ dist/
 .venv/
 
 .idea/
+
+my_python_package.egg-info/
