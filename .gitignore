@@ -10,3 +10,7 @@ dist/
 my_python_package.egg-info/
 
 src/imppkg/__pycache__/
+
+build/
+
+*.c
