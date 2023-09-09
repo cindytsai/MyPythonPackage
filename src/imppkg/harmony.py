@@ -2,6 +2,7 @@ import sys
 import imppkg.harmonic_mean
 import termcolor
 
+
 def main():
     num_list = []
     for i in range(1, len(sys.argv)):

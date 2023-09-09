@@ -14,3 +14,7 @@ src/imppkg/__pycache__/
 build/
 
 *.c
+
+test/__pycache__/
+
+__pycache__/
