@@ -14,11 +14,16 @@ def test_harmony(input_args, monkeypatch, capsys, expected):
     # check the value
     assert capsys.readouterr().out.strip() == str(expected)
 
+
 @pytest.mark.mystuff
 def test_mystuff():
-    assert True
+    a = 1
+    b = 2
+    assert a + b == 3
+
 
 @pytest.mark.xfail
 def test_expected_failure():
-    assert False
-
+    a = 1
+    b = 2
+    assert a + b == 4
