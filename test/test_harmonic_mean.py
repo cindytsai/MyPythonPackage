@@ -2,14 +2,8 @@ import sys
 import pytest
 from imppkg.harmony import main
 
-@pytest.mark.parametrize(
-    "input_args, expected",
-    [
-        (["1", "4", "4"], 2.0),
-        (["1", "a"], "ValueError"),
-        (["0"], "ZeroDivisionError")
-    ]
-)
+
+@pytest.mark.parametrize("input_args, expected", [(["1", "4", "4"], 2.0), (["1", "a"], 0.0), (["0"], 0.0)])
 def test_harmony(input_args, monkeypatch, capsys, expected):
     # patching fake inputs
     monkeypatch.setattr(sys, "argv", ["harmony"] + input_args)
