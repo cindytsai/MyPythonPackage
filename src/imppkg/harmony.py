@@ -10,6 +10,8 @@ def _parses_num(inputs: list[str]) -> list[float]:
         return []
 
 
+
+
 def _calculate_results(nums: list[float]) -> float:
     try:
         return imppkg.harmonic_mean.harmonic_mean(nums)
