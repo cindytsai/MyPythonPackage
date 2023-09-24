@@ -30,4 +30,4 @@ jobs:
         run: |
           echo "Key1: ${{ matrix.key1.value }}, 
                 Key2: ${{ matrix.key2.value }}, 
-                Key3: (${{ matrix.key3.name }}, ${{ matrix.key3.value }})"
+                Key3: (${{ matrix.key3.name }}, ${{ matrix.key3.level }})"
