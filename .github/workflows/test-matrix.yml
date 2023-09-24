@@ -1,0 +1,33 @@
+name: Test Matrix Accessibility
+
+on:
+  - push
+
+jobs:
+  test-matrix:
+    name: Test Matrix Accessibility
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        key1:
+          - value: "#0"
+          - value: "#1"
+          - value: "#2"
+          - value: "#3"
+        key2:
+          - value: "#0"
+          - value: "#1"
+          - value: "#2"
+        key3:
+          - name: "#A"
+            level: "one"
+          - name: "#B"
+            level: "two"
+
+    steps:
+      - name: Print Matrix
+        run: |
+          echo "Key1: ${{ matrix.key1.value }}, 
+                Key2: ${{ matrix.key2.value }}, 
+                Key3: (${{ matrix.key3.name }}, ${{ matrix.key3.value }})"
