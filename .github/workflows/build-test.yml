@@ -78,3 +78,5 @@ jobs:
         run: python -m cibuildwheel --output-dir wheels  # Build wheels in wheels dir
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
+        with:
+          path: ./wheels/*.whl
