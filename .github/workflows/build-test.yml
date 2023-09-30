@@ -116,10 +116,11 @@ jobs:
       - build_wheels
     runs-on: ubuntu-latest
     steps:
-      - name: Download Artifact                        # Download all artifacts to a single directory
+      - name: Download Artifacts                       # Download all artifacts to a single directory
         uses: actions/download-artifact@v3
         with:
-          - path: ./dist
+          name: artifact
+          path: ./dist/
       - name: Publish Package Artifact to PyPI         # Publish to PyPI
         uses: pypa/gh-action-pypi-publish@1.5.0
         with:
