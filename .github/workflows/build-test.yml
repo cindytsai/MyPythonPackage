@@ -76,7 +76,6 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: source_artifact
           path: ./dist/*.tar.gz
       - name: Output File Structure
         run: pwd ; ls -R
@@ -117,13 +116,12 @@ jobs:
       - build_wheels
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v3
-        name: Download Artifact
+      - name: Download Artifact                        # Download all artifacts to a single directory
+        uses: actions/download-artifact@v3
         with:
-          - name: source_artifact                      # Download all artifacts to a single directory
-            path: ./dist
-      - uses: pypa/gh-action-pypi-publish@1.5.0
-        name: Publish Package Artifact to PyPI         # Publish to PyPI
+          - path: ./dist
+      - name: Publish Package Artifact to PyPI         # Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@1.5.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
