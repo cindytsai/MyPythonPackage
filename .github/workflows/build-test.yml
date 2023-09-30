@@ -121,8 +121,8 @@ jobs:
         with:
           name: artifact
           path: ./dist/
-      - name: Publish Package Artifact to PyPI         # Publish to PyPI
-        uses: pypa/gh-action-pypi-publish@1.5.0
+      - name: Publish Package Artifact to PyPI         # Publish to PyPI, by default, it finds packages in dist/ folder
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
