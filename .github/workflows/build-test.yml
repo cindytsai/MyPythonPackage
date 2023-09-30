@@ -76,9 +76,10 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
+          name: source_artifact
           path: ./dist/*.tar.gz
-      - name: Output File Structure # TODO
-        run: ls -R
+      - name: Output File Structure
+        run: pwd ; ls -R
         working-directory: ./dist/
 
   build_wheels:
@@ -100,29 +101,29 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           path: ./wheels/*.whl
-      - name: Output File Structure # TODO
-        run: ls -R
+      - name: Output File Structure
+        run: pwd ; ls -R
         working-directory: ./wheels/
 
-#  publish:
-#    name: Publish to PyPI
-#    if: startsWith(github.event.ref, 'refs/tags/v')     # Run the job only if triggered by tags start with v
-#    needs:                                              # Wait for other jobs
-#      - format
-#      - lint
-#      - typecheck
-#      - test
-#      - build_source_dist
-#      - build_wheels
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/download-artifact@v3
-#        name: Download Artifact
-#        with:
-#          - name: artifact                             # Download all artifacts to a single directory
-#            path: ./dist
-#      - uses: pypa/gh-action-pypi-publish@1.5.0
-#        name: Publish Package Artifact to PyPI         # Publish to PyPI
-#        with:
-#          user: __token__
-#          password: ${{ secrets.PYPI_API_TOKEN }}
+  publish:
+    name: Publish to PyPI
+    if: startsWith(github.event.ref, 'refs/tags/v')     # Run the job only if triggered by tags start with v
+    needs:                                              # Wait for other jobs
+      - format
+      - lint
+      - typecheck
+      - test
+      - build_source_dist
+      - build_wheels
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        name: Download Artifact
+        with:
+          - name: source_artifact                      # Download all artifacts to a single directory
+            path: ./dist
+      - uses: pypa/gh-action-pypi-publish@1.5.0
+        name: Publish Package Artifact to PyPI         # Publish to PyPI
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
