@@ -22,3 +22,7 @@ __pycache__/
 .coverage
 
 .tox/
+
+docs/_build/
+
+src/pubpypack_harmony_cindytsai.egg-info/
