@@ -26,3 +26,5 @@ __pycache__/
 docs/_build/
 
 src/pubpypack_harmony_cindytsai.egg-info/
+
+docs/reference/
