@@ -13,9 +13,9 @@ from importlib import metadata
 project = 'pubpypack-harmony-cindytsai'
 copyright = '2023, Shin-Rong Tsai'
 author = 'Shin-Rong Tsai'
-# PACKAGE_VERSION = metadata.version("pubpypack-harmony-cindytsai")
-# version = PACKAGE_VERSION
-# release = PACKAGE_VERSION
+PACKAGE_VERSION = metadata.version("pubpypack-harmony-cindytsai")
+version = PACKAGE_VERSION
+release = PACKAGE_VERSION
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
