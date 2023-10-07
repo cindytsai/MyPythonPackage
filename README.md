@@ -1,6 +1,6 @@
 # MyPythonPackage
 
-My first Python package following the book _Publishing Python Packages_.
+Notes about how to build a Python package following the book _Publishing Python Packages_.
 
 ## Installation
 ```shell
