@@ -1,4 +1,7 @@
-def harmonic_mean(num_list):
+from typing import List
+
+
+def harmonic_mean(num_list: List[float]) -> float:
     """Return harmonic mean of a list of floats.
 
     :param num_list: A list of floats containing values to calculate
