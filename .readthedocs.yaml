@@ -23,3 +23,5 @@ python:
   install:
     - method: pip
       path: .       # The relative path of the package to install
+    - method: pip
+      requirements: docs/requirements.txt
