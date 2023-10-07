@@ -22,6 +22,13 @@ def _format_output(result: float) -> str:
 
 
 def main() -> None:
+    """Print harmonic mean of a list of input floats.
+
+    :Example:
+
+    $ harmony 1.0 2.0 3.0
+
+    """
     nums = _parses_num(sys.argv[1:])
     result = _calculate_results(nums)
     print(_format_output(result))
