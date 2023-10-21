@@ -26,7 +26,13 @@ def main() -> None:
 
     :Example:
 
-    $ harmony 1.0 2.0 3.0
+    .. code-block:: bash
+
+        harmony 1.0 2.0 3.0
+
+    .. note::
+
+        This is notes.
 
     """
     nums = _parses_num(sys.argv[1:])
